@@ -103,8 +103,13 @@ window#waybar.empty, window#waybar.floating {
   color: #ebcb8b;
 }
 
+#custom-menu {
+  margin-left: 5px;
+}
+
 #clock,
 #battery,
+#custom-adaptive-light,
 #memory,
 #bluetooth,
 #custom-idle_inhibitor,
@@ -118,7 +123,7 @@ window#waybar.empty, window#waybar.floating {
 #custom-sunset {
   padding: 5px 8px;
   border-style: solid;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
   margin: 8px 0;
 }
@@ -136,11 +141,15 @@ window#waybar.empty, window#waybar.floating {
 #clock {
   color: @sky;
   border-radius: 10px;
-  margin: 8px 10px;
+  margin-right: 5px;
 }
 
 #backlight {
   color: @yellow;
+}
+
+#custom-adaptive-light {
+  color: #d8dee9;
 }
 
 #battery {
@@ -178,6 +187,7 @@ window#waybar.empty, window#waybar.floating {
 
 #memory {
   color: @sky;
+  border-radius: 10px 0 0 10px;
 }
 
 #network.disabled {
@@ -219,11 +229,11 @@ window#waybar.empty, window#waybar.floating {
 
 #custom-sunset {
   border-radius: 0 10px 10px 0;
+  margin-right: 5px;
 }
 
 #temperature {
   color: @teal;
-  border-radius: 10px 0 0 10px;
 }
 
 #temperature.critical {
@@ -231,8 +241,8 @@ window#waybar.empty, window#waybar.floating {
 }
 
 #tray {
-  margin: 8px 10px;
   border-radius: 10px;
+  margin-right: 5px;
 }
 
 #window {
