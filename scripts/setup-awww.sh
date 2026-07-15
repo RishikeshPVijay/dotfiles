@@ -4,22 +4,22 @@ expand_home() {
     echo "${1//\$HOME/$HOME}"
 }
 
-BIN_PATH="$(expand_home $(jq -r '.swww.binPath' ./manifest.json))"
-CACHE_PATH="$(expand_home $(jq -r '.swww.cachePath' ./manifest.json))"
-DAEMON_BIN_PATH="$(expand_home $(jq -r '.swww.daemonBinPath' ./manifest.json))"
-G_DRIVE_FILE_ID=$(jq -r '.swww.GDriveFileId' ./manifest.json)
-WALLPAPER_PATH="$(expand_home $(jq -r '.swww.wallpaperPath' ./manifest.json))"
+BIN_PATH="$(expand_home $(jq -r '.awww.binPath' ./manifest.json))"
+CACHE_PATH="$(expand_home $(jq -r '.awww.cachePath' ./manifest.json))"
+DAEMON_BIN_PATH="$(expand_home $(jq -r '.awww.daemonBinPath' ./manifest.json))"
+G_DRIVE_FILE_ID=$(jq -r '.awww.GDriveFileId' ./manifest.json)
+WALLPAPER_PATH="$(expand_home $(jq -r '.awww.wallpaperPath' ./manifest.json))"
 
 install() {
-    echo "Cloning swww"
-    git clone https://github.com/LGFae/swww.git /tmp/swww
+    echo "Cloning awww"
+    git clone https://codeberg.org/LGFae/awww.git /tmp/awww
 
-    pushd /tmp/swww
+    pushd /tmp/awww
     echo "building..."
     cargo build --release
     echo "$BIN_PATH binpath"
-    mv ./target/release/swww $BIN_PATH
-    mv ./target/release/swww-daemon $DAEMON_BIN_PATH
+    mv ./target/release/awww $BIN_PATH
+    mv ./target/release/awww-daemon $DAEMON_BIN_PATH
 
     echo "generating man pages..."
     chmod u+x ./doc/gen.sh
@@ -49,11 +49,11 @@ download_and_set_wallpaper() {
     $BIN_PATH img $WALLPAPER_PATH
 }
 
-if command -v swww &>/dev/null && command -v swww-daemon &>/dev/null; then
-    echo "swww is installed"
+if command -v awww &>/dev/null && command -v awww-daemon &>/dev/null; then
+    echo "awww is installed"
     download_and_set_wallpaper
 else
-    echo "swww not installed"
+    echo "awww not installed"
     install
     run_daemon
     download_and_set_wallpaper

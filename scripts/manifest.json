@@ -3,10 +3,10 @@
         "configPath": "$HOME/.config/sway/config",
         "homePathPlaceholder": "/home/neutrino"
     },
-    "swww": {
-        "binPath": "$HOME/.local/bin/swww",
-        "cachePath": "$HOME/.cache/swww",
-        "daemonBinPath": "$HOME/.local/bin/swww-daemon",
+    "awww": {
+        "binPath": "$HOME/.local/bin/awww",
+        "cachePath": "$HOME/.cache/awww",
+        "daemonBinPath": "$HOME/.local/bin/awww-daemon",
         "GDriveFileId": "1xDjU7X_MVpsbGZyySSAycHSlQwuRHG_v",
         "GDrivePath": "https://drive.google.com/drive/folders/1cX_g92Dup4YJuiFgR3U94jyMCbTXtro8?usp=sharing",
         "wallpaperPath": "$HOME/Pictures/yoru.gif"
