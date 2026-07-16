@@ -30,3 +30,5 @@ include $HOME/.config/sway/keybindings.d/*
 
 exec "$HOME/.config/sway/scripts/runner.sh '$ws3' zen zen-browser --private-window"
 exec "$HOME/.config/sway/scripts/runner.sh '$ws4' footclient footclient"
+
+exec_always --no-startup-id $HOME/.config/sway/scripts/workspace-output-daemon.sh
